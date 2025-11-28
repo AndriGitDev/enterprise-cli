@@ -106,11 +106,16 @@ export default function Terminal({ onWPMUpdate, onMetricsUpdate }: TerminalProps
         if (command) {
           setCommandHistory((prev) => [...prev, command]);
           executeTerminalCommand(term, command);
+        } else {
+          writePrompt(term);
         }
 
         currentInput = '';
         setCurrentLine('');
         setHistoryIndex(-1);
+
+        // Scroll to bottom when command is entered
+        term.scrollToBottom();
       } else if (code === 127) {
         // Backspace
         if (currentInput.length > 0) {
@@ -195,6 +200,9 @@ export default function Terminal({ onWPMUpdate, onMetricsUpdate }: TerminalProps
     }
 
     writePrompt(term);
+
+    // Auto-scroll to bottom to show the prompt
+    term.scrollToBottom();
   };
 
   return (
