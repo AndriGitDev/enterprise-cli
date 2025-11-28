@@ -73,45 +73,45 @@ export default function MetricsPanel({ wpm = 0 }: MetricsPanelProps) {
   };
 
   return (
-    <div className="metrics-panel glass p-4 rounded-lg mb-4">
-      <div className="border-b border-cyber-green/30 pb-2 mb-3">
-        <h3 className="text-cyber-green font-bold text-sm tracking-wider">[LIVE METRICS]</h3>
+    <div className="metrics-panel glass p-2 rounded-lg">
+      <div className="border-b border-cyber-green/30 pb-1 mb-2">
+        <h3 className="text-cyber-green font-bold text-xs tracking-wider">[LIVE METRICS]</h3>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-3 text-xs">
+      <div className="grid grid-cols-3 md:grid-cols-6 gap-2 text-xs">
         <div className="metric-item">
-          <div className="text-gray-400">⚡ WPM</div>
-          <div className="text-cyber-cyan font-bold text-lg">{wpm || '--'}</div>
+          <div className="text-gray-400 text-[10px]">⚡ WPM</div>
+          <div className="text-cyber-cyan font-bold text-sm">{wpm || '--'}</div>
         </div>
 
         <div className="metric-item">
-          <div className="text-gray-400">⏱ Uptime</div>
-          <div className="text-cyber-cyan font-bold text-lg">
+          <div className="text-gray-400 text-[10px]">⏱ Uptime</div>
+          <div className="text-cyber-cyan font-bold text-sm">
             {formatUptime(metrics.uptime)}
           </div>
         </div>
 
         <div className="metric-item">
-          <div className="text-gray-400">👥 Active</div>
-          <div className="text-cyber-cyan font-bold text-lg">
+          <div className="text-gray-400 text-[10px]">👥 Active</div>
+          <div className="text-cyber-cyan font-bold text-sm">
             {metrics.activeUsers.toLocaleString()}
           </div>
         </div>
 
         <div className="metric-item">
-          <div className="text-gray-400">🔥 Streak</div>
-          <div className="text-cyber-cyan font-bold text-lg">{streak}</div>
+          <div className="text-gray-400 text-[10px]">🔥 Streak</div>
+          <div className="text-cyber-cyan font-bold text-sm">{streak}</div>
         </div>
 
         <div className="metric-item">
-          <div className="text-gray-400">💾 CPU</div>
-          <div className="text-cyber-cyan font-bold text-lg">{metrics.cpuUsage}%</div>
+          <div className="text-gray-400 text-[10px]">💾 CPU</div>
+          <div className="text-cyber-cyan font-bold text-sm">{metrics.cpuUsage}%</div>
         </div>
 
         <div className="metric-item">
-          <div className="text-gray-400">🔒 Status</div>
+          <div className="text-gray-400 text-[10px]">🔒 Status</div>
           <div
-            className="font-bold text-sm"
+            className="font-bold text-[11px]"
             style={{ color: getStatusColor(metrics.securityStatus) }}
           >
             {metrics.securityStatus}
@@ -120,8 +120,8 @@ export default function MetricsPanel({ wpm = 0 }: MetricsPanelProps) {
       </div>
 
       {streak > 5 && (
-        <div className="mt-3 p-2 bg-cyber-pink/10 border border-cyber-pink/30 rounded text-center">
-          <span className="text-cyber-pink font-bold text-xs">
+        <div className="mt-2 p-1 bg-cyber-pink/10 border border-cyber-pink/30 rounded text-center">
+          <span className="text-cyber-pink font-bold text-[10px]">
             🔥 ON FIRE! {streak} commands at expert speed!
           </span>
         </div>

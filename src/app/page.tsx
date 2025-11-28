@@ -40,31 +40,36 @@ export default function Home() {
       {showMatrix && <MatrixRain />}
 
       {/* Main container */}
-      <div className="relative z-10 flex flex-col h-screen p-4 md:p-6">
-        {/* Header with metrics */}
-        <div className="mb-4 space-y-4">
-          <MetricsPanel wpm={currentWPM} />
-          <WPMCounter wpm={currentWPM} />
+      <div className="relative z-10 flex flex-col h-screen">
+        {/* Terminal - 80% of screen */}
+        <div className="h-[80vh] p-4 md:p-6 pb-0">
+          <div className="h-full glass rounded-lg overflow-hidden">
+            <Terminal onWPMUpdate={handleWPMUpdate} />
+          </div>
         </div>
 
-        {/* Terminal */}
-        <div className="flex-1 glass rounded-lg overflow-hidden">
-          <Terminal onWPMUpdate={handleWPMUpdate} />
-        </div>
+        {/* Bottom Panel - 20% of screen */}
+        <div className="h-[20vh] flex flex-col px-4 md:px-6 py-3 space-y-2 overflow-y-auto">
+          {/* Metrics and WPM in compact layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+            <MetricsPanel wpm={currentWPM} />
+            <WPMCounter wpm={currentWPM} />
+          </div>
 
-        {/* Footer */}
-        <div className="mt-4 text-center text-xs text-gray-500">
-          <p>
-            © 2025 ANDRI.IS - All rights reserved |{' '}
-            <a
-              href="https://andri.is"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-cyber-green hover:text-cyber-cyan transition-colors"
-            >
-              Main Portfolio
-            </a>
-          </p>
+          {/* Footer */}
+          <div className="text-center text-xs text-gray-500 py-1">
+            <p>
+              © 2025 ANDRI.IS - All rights reserved |{' '}
+              <a
+                href="https://andri.is"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-cyber-green hover:text-cyber-cyan transition-colors"
+              >
+                Main Portfolio
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </main>
