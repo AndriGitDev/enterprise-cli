@@ -48,10 +48,9 @@ export async function executeCommand(input: string): Promise<CommandOutput> {
 
 function cmdHelp(): CommandOutput {
   return {
-    text: `
-╔═══════════════════════════════════════════════════════════════╗
-║                      AVAILABLE COMMANDS                       ║
-╚═══════════════════════════════════════════════════════════════╝
+    text: `================================================================
+                     AVAILABLE COMMANDS
+================================================================
 
 Portfolio Commands:
   about          - Learn about me
@@ -86,7 +85,7 @@ Fun Commands:
   sudo <cmd>     - Run as superuser
 
 Type any command to get started!
-`,
+================================================================`,
     type: 'info',
   };
 }
@@ -94,10 +93,9 @@ Type any command to get started!
 function cmdAbout(): CommandOutput {
   const { personal } = portfolioData;
   return {
-    text: `
-╔═══════════════════════════════════════════════════════════════╗
-║                         ABOUT ME                              ║
-╚═══════════════════════════════════════════════════════════════╝
+    text: `================================================================
+                          ABOUT ME
+================================================================
 
 Name: ${personal.name}
 Role: ${personal.currentRole}
@@ -107,49 +105,48 @@ ${personal.bio.join('\n\n')}
 Objective: ${personal.tagline}
 
 Type 'contact' to get in touch or 'services' to see what I can do for you.
-`,
+================================================================`,
     type: 'success',
   };
 }
 
 function cmdSkills(): CommandOutput {
   return {
-    text: `
-╔═══════════════════════════════════════════════════════════════╗
-║                      TECHNICAL SKILLS                         ║
-╚═══════════════════════════════════════════════════════════════╝
+    text: `================================================================
+                      TECHNICAL SKILLS
+================================================================
 
 Systems Administration:
-  ▸ Windows Server, Linux (Debian, Ubuntu, RHEL), MacOS
-  ▸ VMware, Hyper-V, Proxmox virtualization
-  ▸ Active Directory, Group Policy, DNS, DHCP
-  ▸ PowerShell, Bash scripting automation
+  > Windows Server, Linux (Debian, Ubuntu, RHEL), MacOS
+  > VMware, Hyper-V, Proxmox virtualization
+  > Active Directory, Group Policy, DNS, DHCP
+  > PowerShell, Bash scripting automation
 
 Cybersecurity:
-  ▸ ISO 27001 Lead Auditor certified
-  ▸ ISO 42001 Lead Auditor certified
-  ▸ TPN Gold security framework implementation
-  ▸ Security auditing, compliance, risk assessment
-  ▸ Penetration testing, vulnerability management
+  > ISO 27001 Lead Auditor certified
+  > ISO 42001 Lead Auditor certified
+  > TPN Gold security framework implementation
+  > Security auditing, compliance, risk assessment
+  > Penetration testing, vulnerability management
 
 Web Development:
-  ▸ HTML5, CSS3, JavaScript, TypeScript
-  ▸ React, Next.js, Node.js
-  ▸ API development (REST, GraphQL)
-  ▸ Database design (PostgreSQL, MySQL, MongoDB)
+  > HTML5, CSS3, JavaScript, TypeScript
+  > React, Next.js, Node.js
+  > API development (REST, GraphQL)
+  > Database design (PostgreSQL, MySQL, MongoDB)
 
 Cloud & DevOps:
-  ▸ AWS, Azure, Vercel deployment
-  ▸ Docker, Kubernetes containerization
-  ▸ CI/CD pipelines (GitHub Actions, Jenkins)
-  ▸ Infrastructure as Code (Terraform)
+  > AWS, Azure, Vercel deployment
+  > Docker, Kubernetes containerization
+  > CI/CD pipelines (GitHub Actions, Jenkins)
+  > Infrastructure as Code (Terraform)
 
 Other:
-  ▸ Project management (Agile, Scrum)
-  ▸ Customer success & technical support
-  ▸ Photography & graphic design
-  ▸ AI automation & integration
-`,
+  > Project management (Agile, Scrum)
+  > Customer success & technical support
+  > Photography & graphic design
+  > AI automation & integration
+================================================================`,
     type: 'info',
   };
 }
@@ -161,15 +158,14 @@ function cmdServices(): CommandOutput {
     .join('\n\n');
 
   return {
-    text: `
-╔═══════════════════════════════════════════════════════════════╗
-║                    WHAT CAN I DO FOR YOU?                     ║
-╚═══════════════════════════════════════════════════════════════╝
+    text: `================================================================
+                   WHAT CAN I DO FOR YOU?
+================================================================
 
 ${output}
 
 Ready to work together? Type 'contact' to get in touch!
-`,
+================================================================`,
     type: 'success',
   };
 }
@@ -187,75 +183,71 @@ function cmdProjects(): CommandOutput {
     .join('\n');
 
   return {
-    text: `
-╔═══════════════════════════════════════════════════════════════╗
-║                       PORTFOLIO PROJECTS                      ║
-╚═══════════════════════════════════════════════════════════════╝
+    text: `================================================================
+                     PORTFOLIO PROJECTS
+================================================================
 ${output}
-`,
+================================================================`,
     type: 'info',
   };
 }
 
 function cmdWork(): CommandOutput {
   return {
-    text: `
-╔═══════════════════════════════════════════════════════════════╗
-║                      WORK EXPERIENCE                          ║
-╚═══════════════════════════════════════════════════════════════╝
+    text: `================================================================
+                      WORK EXPERIENCE
+================================================================
 
 [CURRENT] Technical Success Manager @ Aftra.io
-  • Customer success & technical support
-  • Security compliance & system optimization
-  • Technical onboarding & training
+  > Customer success & technical support
+  > Security compliance & system optimization
+  > Technical onboarding & training
 
 [2020-2024] Chief Technical Architect @ RVX Productions
-  • Led company to TPN Gold security certification
-  • Implemented ISO 27001 security framework
-  • Managed infrastructure & development teams
-  • Oversaw all technical operations
+  > Led company to TPN Gold security certification
+  > Implemented ISO 27001 security framework
+  > Managed infrastructure & development teams
+  > Oversaw all technical operations
 
 [2018-2020] System Administrator @ Isavia ANS
-  • Air traffic control systems management
-  • Critical infrastructure maintenance
-  • 24/7 system monitoring & support
+  > Air traffic control systems management
+  > Critical infrastructure maintenance
+  > 24/7 system monitoring & support
 
 [2016-2018] IT Specialist @ Terra Umhverfisþjónusta
-  • Network administration & support
-  • Server management (Windows/Linux)
-  • Help desk & end-user support
+  > Network administration & support
+  > Server management (Windows/Linux)
+  > Help desk & end-user support
 
 Type 'companies' to see all organizations I've worked with.
-`,
+================================================================`,
     type: 'success',
   };
 }
 
 function cmdCompanies(): CommandOutput {
   const { companies } = portfolioData;
-  const output = companies.map((company) => `  ▸ ${company.name} - ${company.url}`).join('\n');
+  const output = companies.map((company) => `  > ${company.name} - ${company.url}`).join('\n');
 
   return {
-    text: `
-╔═══════════════════════════════════════════════════════════════╗
-║                  COMPANIES I'VE WORKED WITH                   ║
-╚═══════════════════════════════════════════════════════════════╝
+    text: `================================================================
+                 COMPANIES I'VE WORKED WITH
+================================================================
 
 ${output}
 
 These experiences have shaped my expertise in cybersecurity, system
 administration, and customer success.
-`,
+================================================================`,
     type: 'info',
   };
 }
 
 function cmdCertifications(): CommandOutput {
   return {
-    text: `
-╔═══════════════════════════════════════════════════════════════╗
-║                   SECURITY CERTIFICATIONS                     ║
-╚═══════════════════════════════════════════════════════════════╝
+    text: `================================================================
+                  SECURITY CERTIFICATIONS
+================================================================
 
 🏆 ISO 27001 Lead Auditor
    Information Security Management Systems
@@ -270,11 +262,11 @@ function cmdCertifications(): CommandOutput {
    Content security assessment for media & entertainment
 
 Specialization:
-  • Security framework implementation
-  • Compliance auditing & risk assessment
-  • High-security environment management
-  • Information security consulting
-`,
+  > Security framework implementation
+  > Compliance auditing & risk assessment
+  > High-security environment management
+  > Information security consulting
+================================================================`,
     type: 'success',
   };
 }
@@ -282,17 +274,16 @@ Specialization:
 function cmdContact(): CommandOutput {
   const { personal } = portfolioData;
   return {
-    text: `
-╔═══════════════════════════════════════════════════════════════╗
-║                        GET IN TOUCH                           ║
-╚═══════════════════════════════════════════════════════════════╝
+    text: `================================================================
+                       GET IN TOUCH
+================================================================
 
 📧 Email: ${personal.email}
 
 Ready to simplify your IT? Let's connect!
 
 For social links, type 'social'
-`,
+================================================================`,
     type: 'success',
   };
 }
@@ -300,16 +291,15 @@ For social links, type 'social'
 function cmdSocial(): CommandOutput {
   const { social } = portfolioData;
   return {
-    text: `
-╔═══════════════════════════════════════════════════════════════╗
-║                       SOCIAL LINKS                            ║
-╚═══════════════════════════════════════════════════════════════╝
+    text: `================================================================
+                       SOCIAL LINKS
+================================================================
 
 💼 LinkedIn: ${social.linkedin}
 🐙 GitHub: ${social.github}
 
 Type 'linkedin' or 'github' to open directly in your browser.
-`,
+================================================================`,
     type: 'info',
   };
 }
