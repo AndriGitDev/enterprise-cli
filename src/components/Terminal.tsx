@@ -31,6 +31,9 @@ export default function Terminal({ onWPMUpdate, onMetricsUpdate }: TerminalProps
       cursorStyle: 'block',
       fontFamily: '"Fira Code", "JetBrains Mono", Consolas, Monaco, monospace',
       fontSize: 14,
+      lineHeight: 1.2,
+      scrollback: 1000,
+      convertEol: true,
       theme: {
         background: '#0a0a0f',
         foreground: '#ffffff',

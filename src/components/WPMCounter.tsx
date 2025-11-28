@@ -94,17 +94,17 @@ export default function WPMCounter({ wpm }: WPMCounterProps) {
   const rankColor = getRankColor(rank);
 
   return (
-    <div className="wpm-counter glass p-4 rounded-lg mb-4">
-      <div className="flex items-center justify-between mb-2">
-        <div className="flex items-center gap-3">
-          <span className="text-2xl">{getRankEmoji(rank)}</span>
+    <div className="wpm-counter glass p-2 rounded-lg">
+      <div className="flex items-center justify-between mb-1">
+        <div className="flex items-center gap-2">
+          <span className="text-lg">{getRankEmoji(rank)}</span>
           <div>
-            <div className="text-sm text-gray-400">Words Per Minute</div>
-            <div className="flex items-baseline gap-2">
-              <span className="text-4xl font-bold" style={{ color: rankColor }}>
+            <div className="text-[10px] text-gray-400">Words Per Minute</div>
+            <div className="flex items-baseline gap-1">
+              <span className="text-2xl font-bold" style={{ color: rankColor }}>
                 {displayWPM}
               </span>
-              <span className="text-sm" style={{ color: rankColor }}>
+              <span className="text-xs" style={{ color: rankColor }}>
                 WPM
               </span>
             </div>
@@ -112,17 +112,17 @@ export default function WPMCounter({ wpm }: WPMCounterProps) {
         </div>
         <div className="text-right">
           <div
-            className="text-lg font-bold uppercase tracking-wider"
+            className="text-sm font-bold uppercase tracking-wider"
             style={{ color: rankColor }}
           >
             {rank}
           </div>
-          <div className="text-xs text-gray-400">{getRankMessage(rank)}</div>
+          <div className="text-[10px] text-gray-400">{getRankMessage(rank)}</div>
         </div>
       </div>
 
       {/* Progress Bar */}
-      <div className="relative h-6 bg-gray-800 rounded-full overflow-hidden">
+      <div className="relative h-4 bg-gray-800 rounded-full overflow-hidden">
         <div
           className="absolute top-0 left-0 h-full transition-all duration-500 ease-out wpm-bar"
           style={{
@@ -131,16 +131,16 @@ export default function WPMCounter({ wpm }: WPMCounterProps) {
             boxShadow: `0 0 10px ${rankColor}`,
           }}
         />
-        <div className="absolute inset-0 flex items-center justify-center text-xs font-mono text-white z-10">
+        <div className="absolute inset-0 flex items-center justify-center text-[10px] font-mono text-white z-10">
           {'█'.repeat(Math.floor(barWidth / 5))}
           {'░'.repeat(20 - Math.floor(barWidth / 5))}
         </div>
       </div>
 
-      <div className="mt-2 text-xs text-gray-500 text-center">
+      <div className="mt-1 text-[10px] text-gray-500 text-center">
         {wpm > 0
-          ? `Your typing speed ranks in top ${100 - Math.min(barWidth, 95)}% of terminal users`
-          : 'Start typing to track your WPM...'}
+          ? `Top ${100 - Math.min(barWidth, 95)}% of users`
+          : 'Start typing to track WPM'}
       </div>
     </div>
   );
