@@ -1,0 +1,150 @@
+{
+  "personal": {
+    "name": "Andri",
+    "tagline": "Simplify IT",
+    "subtitle": "Let's make tech work for you",
+    "email": "contact@andri.is",
+    "currentRole": "Technical Success Manager at Aftra.io",
+    "bio": [
+      "Hi! My name is Andri and I work at Aftra.io as Technical Success Manager",
+      "As an experienced IT specialist, with a focus on customer success, cybersecurity, server management, and reliable technical support, I am dedicated to ensuring that customers achieve the best possible results with Aftra.io's solutions.",
+      "I have extensive experience in ensuring the smooth operation of IT systems on Windows, Linux, and MacOS.",
+      "With a background as Chief Technical Architect at RVX Productions and extensive experience in system administration at various companies such as Isavia Air Navigation Systems and Terra Umhverfisþjónusta,",
+      "I leverage my deep technical knowledge to support and ensure the success of Aftra.io's customers.",
+      "My passion lies in applying my skills in an environment that values continuous improvement and proactive problem-solving to ensure customer satisfaction and success. I am committed to contributing to the success and security of Aftra.io's customers and systems."
+    ]
+  },
+  "services": [
+    {
+      "name": "Website Design",
+      "description": "Modern, responsive websites that engage your audience and drive results.",
+      "icon": "🌐"
+    },
+    {
+      "name": "SysAdmin",
+      "description": "Expert system administration across Windows, Linux, and MacOS platforms.",
+      "icon": "🖥️"
+    },
+    {
+      "name": "Project Management",
+      "description": "Strategic planning and execution to bring your technical projects to life.",
+      "icon": "📊"
+    },
+    {
+      "name": "Graphic Design",
+      "description": "Creative visual solutions that communicate your brand effectively.",
+      "icon": "🎨"
+    },
+    {
+      "name": "User Experience",
+      "description": "Intuitive interfaces designed with your users in mind.",
+      "icon": "✨"
+    },
+    {
+      "name": "ISO27001 & TPN Gold",
+      "description": "Security framework implementation and compliance expertise.",
+      "icon": "🔒"
+    },
+    {
+      "name": "AI Automation",
+      "description": "Implementing AI solutions to streamline your business processes.",
+      "icon": "🤖"
+    },
+    {
+      "name": "Photography",
+      "description": "Professional photography services for all your visual needs.",
+      "icon": "📷"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Ansjósur.is",
+      "description": "E-Commerce site built on Shopify - Built the entire site, implemented credit card processing and shipping.",
+      "url": "https://ansjosur.is",
+      "image": "ansjosur.PNG"
+    },
+    {
+      "name": "LCARS (Library Access And Retrieval System)",
+      "description": "Website project showcasing my professional experience and my love for Star Trek.",
+      "url": "https://lcars.andri.is",
+      "image": "LCARS.png"
+    },
+    {
+      "name": "Myrkur",
+      "description": "Website project based around simulating cyberattacks in Iceland and displaying it in a map based dashboard.",
+      "url": "https://myrkur.andri.is",
+      "image": "MYRKUR.png"
+    },
+    {
+      "name": "Skáld (Retired)",
+      "description": "AI Thought Experiment, the entity wakes up at 3:15am UTC every night and writes a poem about humanity's future and AI's impact on our development. This poem then gets sent to a image generator, which interprets the poem and dreams up a vision of the poem.",
+      "url": "https://andri.is",
+      "image": "SKALD.png"
+    },
+    {
+      "name": "ANDRI.IS - Portfolio Website",
+      "description": "Modern cyberpunk-themed portfolio website with Three.js 3D elements, featuring a warped grid background, floating geometric shapes, and glassmorphism design. Self-hosted on Debian VPS.",
+      "url": "https://andri.is",
+      "image": "andri.is.png"
+    },
+    {
+      "name": "Super Secret Sharing",
+      "description": "A secure platform to temporarily share secrets and passwords with client-side encryption, burn-on-read functionality, time limits (1 hour to 7 days), view controls, and zero-knowledge architecture ensuring the server never sees unencrypted data.",
+      "url": "https://sss.andri.is",
+      "image": "SSS.png"
+    }
+  ],
+  "companies": [
+    {
+      "name": "Aftra.io",
+      "url": "https://aftra.io/",
+      "logo": "aftra.svg"
+    },
+    {
+      "name": "RVX Productions",
+      "url": "https://rvx.is/",
+      "logo": "RVX.svg"
+    },
+    {
+      "name": "Isavia ANS",
+      "url": "https://ans.isavia.is/",
+      "logo": "isavia-ans.svg"
+    },
+    {
+      "name": "Terra",
+      "url": "https://www.terra.is/",
+      "logo": "terra.svg"
+    },
+    {
+      "name": "University of Iceland",
+      "url": "https://hi.is/",
+      "logo": "hi.jpg"
+    },
+    {
+      "name": "Ljósmyndaskólinn",
+      "url": "https://ljosmyndaskolinn.is/",
+      "logo": "ljosmynda.svg"
+    },
+    {
+      "name": "Vodafone",
+      "url": "https://www.syn.is/",
+      "logo": "vodafone.svg"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO 27001 Lead Auditor",
+      "badge": "ISO\n27001",
+      "description": "Certified ISO 27001 Lead Auditor"
+    },
+    {
+      "name": "ISO 42001 Lead Auditor",
+      "badge": "ISO\n42001",
+      "description": "Certified ISO 42001 Lead Auditor"
+    }
+  ],
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/andripetur/",
+    "github": "https://github.com/AndriGitDev"
+  }
+}
