@@ -48,18 +48,23 @@ body {
 /* Terminal styles */
 .terminal-container {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   position: relative;
 }
 
 .xterm {
   padding: 1rem;
+  padding-bottom: 25vh; /* Add extra padding so content isn't hidden behind bottom panel */
   height: 100%;
   width: 100%;
 }
 
 .xterm-viewport {
   overflow-y: auto !important;
+}
+
+.xterm-screen {
+  padding-bottom: 20vh !important; /* Ensure scrollable area extends beyond viewport */
 }
 
 /* Glitch effect */
