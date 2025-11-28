@@ -89,6 +89,9 @@ export default function Terminal({ onWPMUpdate, onMetricsUpdate }: TerminalProps
     term.writeln('');
     writePrompt(term);
 
+    // Auto-focus terminal for immediate typing
+    term.focus();
+
     let currentInput = '';
 
     // Handle input
@@ -108,14 +111,13 @@ export default function Terminal({ onWPMUpdate, onMetricsUpdate }: TerminalProps
           executeTerminalCommand(term, command);
         } else {
           writePrompt(term);
+          // Scroll to bottom for empty enter
+          setTimeout(() => term.scrollToBottom(), 10);
         }
 
         currentInput = '';
         setCurrentLine('');
         setHistoryIndex(-1);
-
-        // Scroll to bottom when command is entered
-        term.scrollToBottom();
       } else if (code === 127) {
         // Backspace
         if (currentInput.length > 0) {
@@ -160,6 +162,8 @@ export default function Terminal({ onWPMUpdate, onMetricsUpdate }: TerminalProps
         currentInput += data;
         setCurrentLine(currentInput);
         term.write(data);
+        // Keep scrolling to bottom as user types
+        setTimeout(() => term.scrollToBottom(), 0);
       }
     });
 
@@ -201,8 +205,10 @@ export default function Terminal({ onWPMUpdate, onMetricsUpdate }: TerminalProps
 
     writePrompt(term);
 
-    // Auto-scroll to bottom to show the prompt
-    term.scrollToBottom();
+    // Auto-scroll to bottom to show the prompt (with delay to ensure DOM updates)
+    setTimeout(() => {
+      term.scrollToBottom();
+    }, 10);
   };
 
   return (
