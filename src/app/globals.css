@@ -54,7 +54,7 @@ body {
 
 .xterm {
   padding: 1rem;
-  padding-bottom: 25vh; /* Add extra padding so content isn't hidden behind bottom panel */
+  padding-bottom: 10vh; /* Add extra padding so content isn't hidden behind bottom panel */
   height: 100%;
   width: 100%;
 }
@@ -64,7 +64,7 @@ body {
 }
 
 .xterm-screen {
-  padding-bottom: 20vh !important; /* Ensure scrollable area extends beyond viewport */
+  padding-bottom: 8vh !important; /* Ensure scrollable area extends beyond viewport */
 }
 
 /* Glitch effect */
