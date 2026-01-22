@@ -10,17 +10,31 @@ import { WPMTracker } from '@/lib/wpm/tracker';
 
 interface TerminalProps {
   onWPMUpdate?: (wpm: number) => void;
-  onMetricsUpdate?: (metrics: any) => void;
 }
 
-export default function Terminal({ onWPMUpdate, onMetricsUpdate }: TerminalProps) {
+export default function Terminal({ onWPMUpdate }: TerminalProps) {
   const terminalRef = useRef<HTMLDivElement>(null);
   const xtermRef = useRef<XTerm | null>(null);
   const fitAddonRef = useRef<FitAddon | null>(null);
   const wpmTrackerRef = useRef<WPMTracker | null>(null);
   const [currentLine, setCurrentLine] = useState('');
-  const [commandHistory, setCommandHistory] = useState<string[]>([]);
+  const [commandHistory, setCommandHistory] = useState<string[]>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('terminal-history');
+      return saved ? JSON.parse(saved) : [];
+    }
+    return [];
+  });
   const [historyIndex, setHistoryIndex] = useState(-1);
+
+  // Persist command history to localStorage
+  useEffect(() => {
+    if (commandHistory.length > 0) {
+      // Keep only the last 100 commands
+      const historyToSave = commandHistory.slice(-100);
+      localStorage.setItem('terminal-history', JSON.stringify(historyToSave));
+    }
+  }, [commandHistory]);
 
   useEffect(() => {
     if (!terminalRef.current || xtermRef.current) return;
@@ -176,6 +190,7 @@ export default function Terminal({ onWPMUpdate, onMetricsUpdate }: TerminalProps
 
     return () => {
       window.removeEventListener('resize', handleResize);
+      wpmTrackerRef.current?.destroy();
       term.dispose();
     };
   }, []);

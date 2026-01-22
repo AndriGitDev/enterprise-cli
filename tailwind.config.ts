@@ -13,6 +13,8 @@ const config: Config = {
         'cyber-cyan': '#00d4ff',
         'cyber-dark': '#0a0a0f',
         'cyber-gray': '#b0b0b0',
+        'cyber-pink': '#ff006e',
+        'cyber-yellow': '#ffbe0b',
       },
       fontFamily: {
         mono: ['"Fira Code"', '"JetBrains Mono"', 'Consolas', 'Monaco', 'monospace'],

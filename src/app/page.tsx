@@ -20,7 +20,7 @@ const Terminal = dynamic(() => import('@/components/Terminal'), {
 export default function Home() {
   const [loading, setLoading] = useState(true);
   const [currentWPM, setCurrentWPM] = useState(0);
-  const [showMatrix, setShowMatrix] = useState(true);
+  const showMatrix = true;
 
   const handleLoadingComplete = () => {
     setLoading(false);

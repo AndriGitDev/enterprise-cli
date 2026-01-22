@@ -24,9 +24,6 @@ export default function MetricsPanel({ wpm = 0 }: MetricsPanelProps) {
 
     const updateMetrics = () => {
       const uptime = Math.floor((Date.now() - startTime) / 1000);
-      const hours = Math.floor(uptime / 3600);
-      const minutes = Math.floor((uptime % 3600) / 60);
-      const seconds = uptime % 60;
 
       setMetrics({
         uptime,

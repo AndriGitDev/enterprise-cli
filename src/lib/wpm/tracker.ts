@@ -8,11 +8,9 @@ export class WPMTracker {
   private wpmHistory: number[] = [];
   private updateInterval: NodeJS.Timeout | null = null;
   private onUpdate: (wpm: number) => void;
-  private lastUpdateTime: number;
 
   constructor(onUpdate: (wpm: number) => void) {
     this.startTime = Date.now();
-    this.lastUpdateTime = Date.now();
     this.onUpdate = onUpdate;
     this.startTracking();
   }
@@ -38,7 +36,6 @@ export class WPMTracker {
 
   trackKeystroke() {
     this.charactersTyped++;
-    this.lastUpdateTime = Date.now();
   }
 
   trackBackspace() {
@@ -77,9 +74,10 @@ export class WPMTracker {
   }
 
   private calculateAccuracy(): number {
-    if (this.charactersTyped === 0) return 100;
     const totalKeystrokes = this.charactersTyped + this.backspaces;
-    return Math.round(((this.charactersTyped - this.backspaces) / totalKeystrokes) * 100);
+    if (totalKeystrokes === 0) return 100;
+    const accuracy = ((this.charactersTyped - this.backspaces) / totalKeystrokes) * 100;
+    return Math.max(0, Math.round(accuracy));
   }
 
   getRank(wpm: number): WPMRank {

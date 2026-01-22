@@ -7,8 +7,14 @@ interface WPMData {
   accuracy: number;
 }
 
+interface SessionData {
+  wpmHistory: number[];
+  peakWpm: number;
+  achievements: string[];
+}
+
 // In-memory storage (replace with Vercel KV in production)
-const sessionData = new Map();
+const sessionData = new Map<string, SessionData>();
 
 export async function POST(request: NextRequest) {
   try {
@@ -20,7 +26,7 @@ export async function POST(request: NextRequest) {
     const wpm = Math.round((characters / 5) / minutes);
 
     // Get or create session data
-    let session = sessionData.get(sessionId) || {
+    const session = sessionData.get(sessionId) || {
       wpmHistory: [],
       peakWpm: 0,
       achievements: [],
@@ -68,7 +74,7 @@ export async function POST(request: NextRequest) {
 
 function checkAchievements(
   wpm: number,
-  session: any,
+  session: SessionData,
   characters: number,
   accuracy: number
 ): string[] {

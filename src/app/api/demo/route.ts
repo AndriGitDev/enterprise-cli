@@ -21,9 +21,16 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Validate message length if provided
+    if (message && typeof message === 'string' && message.length > 1000) {
+      return NextResponse.json(
+        { error: 'Message too long (max 1000 characters)' },
+        { status: 400 }
+      );
+    }
+
     // TODO: Implement actual demo request logic
     // Could send email via Resend API or store in database
-    console.log('Demo request:', { email, message });
 
     return NextResponse.json({
       success: true,

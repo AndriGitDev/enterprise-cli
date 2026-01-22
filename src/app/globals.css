@@ -26,7 +26,13 @@ body {
   line-height: 1.6;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--cyber-green) rgba(0, 0, 0, 0.3);
+}
+
+/* Custom scrollbar - WebKit (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;

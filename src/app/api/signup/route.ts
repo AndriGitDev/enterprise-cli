@@ -21,9 +21,15 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Validate name length
+    if (typeof name !== 'string' || name.length > 100) {
+      return NextResponse.json(
+        { error: 'Invalid name (max 100 characters)' },
+        { status: 400 }
+      );
+    }
+
     // TODO: Implement actual signup logic with Vercel KV or email service
-    // For now, just return success
-    console.log('Signup request:', { email, name });
 
     return NextResponse.json({
       success: true,

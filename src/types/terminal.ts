@@ -6,7 +6,7 @@ export interface CommandOutput {
 export interface Command {
   name: string;
   description: string;
-  execute: (args: string[]) => CommandOutput | Promise<CommandOutput>;
+  execute: (_args: string[]) => CommandOutput | Promise<CommandOutput>;
   aliases?: string[];
 }
 
