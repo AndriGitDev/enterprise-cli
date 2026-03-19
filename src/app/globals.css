@@ -1,8 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@source "../**/*.{js,ts,jsx,tsx,mdx}";
+
+@theme {
+  --color-cyber-green: #00ff9d;
+  --color-cyber-cyan: #00d4ff;
+  --color-cyber-dark: #0a0a0f;
+  --color-cyber-gray: #b0b0b0;
+  --color-cyber-pink: #ff006e;
+  --color-cyber-yellow: #ffbe0b;
+  --font-mono: 'Fira Code', 'JetBrains Mono', Consolas, Monaco, monospace;
+}
 
 :root {
   --cyber-green: #00ff9d;
