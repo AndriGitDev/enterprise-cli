@@ -74,7 +74,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased">
         {children}
-        <Script src="https://swetrix.kastro.is/swetrix.js" strategy="afterInteractive" />
+        <Script src="https://cdn.jsdelivr.net/npm/swetrix@latest/dist/swetrix.js" strategy="afterInteractive" />
         <Script id="swetrix-init" strategy="afterInteractive">
           {`
             document.addEventListener('DOMContentLoaded', function() {
