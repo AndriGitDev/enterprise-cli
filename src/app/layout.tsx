@@ -74,20 +74,20 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased">
         {children}
-        <Script src="https://swetrix.org/swetrix.js" strategy="afterInteractive" />
+        <Script src="https://swetrix.kastro.is/swetrix.js" strategy="afterInteractive" />
         <Script id="swetrix-init" strategy="afterInteractive">
           {`
             document.addEventListener('DOMContentLoaded', function() {
               if (window.swetrix) {
-                swetrix.init('59K1AtEBspjp', {
-                  apiURL: 'https://swetrixapi.kindra.is/log',
+                swetrix.init('X05bK6JBJ6ZJ', {
+                  apiURL: 'https://swetrixapi.kastro.is/log',
                 });
                 swetrix.trackViews();
               }
             });
             if (document.readyState !== 'loading' && window.swetrix) {
-              swetrix.init('59K1AtEBspjp', {
-                apiURL: 'https://swetrixapi.kindra.is/log',
+              swetrix.init('X05bK6JBJ6ZJ', {
+                apiURL: 'https://swetrixapi.kastro.is/log',
               });
               swetrix.trackViews();
             }
@@ -96,7 +96,7 @@ export default function RootLayout({
         <noscript>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="https://swetrixapi.kindra.is/log/noscript?pid=59K1AtEBspjp"
+            src="https://swetrixapi.kastro.is/log/noscript?pid=X05bK6JBJ6ZJ"
             alt=""
             referrerPolicy="no-referrer-when-downgrade"
           />
